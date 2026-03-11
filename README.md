@@ -23,10 +23,10 @@ Metrics are collected from a host system and visualized through Grafana dashboar
 
 The environment includes:
 
-- **Prometheus** – time-series metrics collection and storage  
-- **Node Exporter** – host-level metrics exporter  
-- **Grafana** – visualization and dashboards  
-- **Docker** – containerized deployment  
+- **Prometheus** – time-series metrics collection and storage
+- **Node Exporter** – host-level metrics exporter
+- **Grafana** – visualization and dashboards
+- **Docker** – containerized deployment
 
 ---
 
@@ -68,7 +68,7 @@ Grafana queries Prometheus and visualizes the metrics through dashboards.
 
 Grafana dashboard displaying infrastructure metrics.
 
-![Grafana Dashboard](./evidence/grafana-dashboard.png)
+![Grafana Dashboard](https://raw.githubusercontent.com/AndreGoncallez/primeops-observability-incident-lab/main/evidence/grafana-dashboard.png)
 
 ---
 
@@ -76,7 +76,7 @@ Grafana dashboard displaying infrastructure metrics.
 
 Prometheus successfully scraping Node Exporter metrics.
 
-![Prometheus Targets](./evidence/prometheus-targets.png)
+![Prometheus Targets](https://raw.githubusercontent.com/AndreGoncallez/primeops-observability-incident-lab/main/evidence/prometheus-targets.png)
 
 ---
 
@@ -84,7 +84,23 @@ Prometheus successfully scraping Node Exporter metrics.
 
 Docker containers used in the monitoring stack.
 
-![Docker Containers](./evidence/docker-containers.png)
+![Docker Containers](https://raw.githubusercontent.com/AndreGoncallez/primeops-observability-incident-lab/main/evidence/docker-containers.png)
+
+---
+
+# Alert Rules
+
+This lab also includes a basic Prometheus alerting rule to detect abnormal host behavior.
+
+Current alert implemented:
+
+**High CPU Usage**
+
+This alert triggers when CPU utilization remains above the configured threshold for a sustained period.
+
+Example of configured alert rule:
+
+![Prometheus Rules](https://raw.githubusercontent.com/AndreGoncallez/primeops-observability-incident-lab/main/evidence/prometheus-rules.png)
 
 ---
 
@@ -98,6 +114,7 @@ This project demonstrates practical experience with:
 - Grafana Dashboard Design
 - Docker-based Monitoring Stack
 - Troubleshooting Based on Metrics
+- Prometheus Alert Rules
 
 ---
 
@@ -124,6 +141,7 @@ This lab was created to practice:
 - dashboard creation
 - incident investigation
 - troubleshooting based on metrics
+- alert rule configuration
 
 ---
 
