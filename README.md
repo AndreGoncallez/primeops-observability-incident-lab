@@ -1,50 +1,126 @@
 # PrimeOps Observability Incident Lab
 
-A hands-on observability lab built to simulate infrastructure monitoring and incident analysis using open-source tools.
+A hands-on observability lab designed to simulate infrastructure monitoring and incident investigation using open-source tools.
 
-## Objective
+This project demonstrates how modern monitoring stacks collect, store and visualize infrastructure metrics.
 
-This project demonstrates a basic monitoring and observability stack focused on host-level infrastructure metrics, dashboard visualization and incident investigation.
+---
 
-## Stack
+# Overview
 
-- Docker
-- Prometheus
-- Node Exporter
-- Grafana
+The lab uses a lightweight monitoring stack built with Docker to simulate a production-like observability environment.
 
-## Monitored Metrics
+Metrics are collected from a host system and visualized through Grafana dashboards to support operational troubleshooting and incident analysis.
 
-- CPU utilization
-- Memory utilization
+---
+
+# Monitoring Stack
+
+The environment includes:
+
+- **Prometheus** – time-series metrics collection and storage
+- **Node Exporter** – host-level metrics exporter
+- **Grafana** – visualization and dashboards
+- **Docker** – containerized deployment
+
+---
+
+# Monitored Metrics
+
+The dashboard includes the following infrastructure metrics:
+
+- Host CPU utilization
+- Host memory utilization
 - Network inbound traffic
 - Network outbound traffic
 - System load
 
-## Architecture
+These metrics help detect abnormal system behavior and support incident investigation.
 
-Node Exporter exposes host metrics through an HTTP endpoint.  
-Prometheus scrapes and stores these metrics as time series data.  
-Grafana queries Prometheus and visualizes the collected metrics through dashboards.
+---
 
-## Dashboard
+# Architecture
 
-The Grafana dashboard includes panels for:
 
-- Host CPU Utilization
-- Host Memory Utilization
-- Network Inbound Traffic
-- Network Outbound Traffic
+Host System
+│
+▼
+Node Exporter
+│
+▼
+Prometheus (scraping metrics)
+│
+▼
+Grafana (dashboard visualization)
 
-## Evidence
 
-Screenshots of the running environment are available in the `evidence/` directory.
+Prometheus periodically scrapes metrics exposed by Node Exporter and stores them as time-series data.  
+Grafana queries Prometheus and visualizes the metrics through dashboards.
 
-## Project Structure
+---
 
-```text
-monitoring/   # Docker Compose and Prometheus configuration
-dashboards/   # Dashboard-related files
-runbooks/     # Incident response documentation
-scenarios/    # Incident simulation ideas
-evidence/     # Screenshots of the lab
+# Dashboard Example
+
+Grafana dashboard displaying infrastructure metrics.
+
+![Grafana Dashboard](evidence/grafana-dashboard.png)
+
+---
+
+# Prometheus Targets
+
+Prometheus successfully scraping Node Exporter metrics.
+
+![Prometheus Targets](evidence/prometheus-targets.png)
+
+---
+
+# Running Containers
+
+Docker containers used in the monitoring stack.
+
+![Docker Containers](evidence/docker-containers.png)
+
+---
+
+# Project Structure
+
+
+monitoring/ # Docker compose and Prometheus configuration
+dashboards/ # Grafana dashboards
+runbooks/ # Incident investigation procedures
+scenarios/ # Simulated incident scenarios
+evidence/ # Screenshots of the environment
+scripts/ # Supporting scripts
+docs/ # Documentation
+
+
+---
+
+# Use Cases
+
+This lab was created to practice:
+
+- infrastructure monitoring
+- observability fundamentals
+- dashboard creation
+- incident investigation
+- troubleshooting based on metrics
+
+---
+
+# Future Improvements
+
+Planned improvements for this lab:
+
+- alert rules using Prometheus Alertmanager
+- simulated incident scenarios
+- automated runbooks
+- additional infrastructure metrics
+
+---
+
+# Author
+
+Andre Goncallez  
+PrimeOps Project
