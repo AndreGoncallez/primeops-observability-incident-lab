@@ -1,4 +1,4 @@
-# PrimeOps Observability Incident Lab
+# PrimeOps Monitoring Observability Incident Lab
 
 ![Docker](https://img.shields.io/badge/Docker-Container-blue)
 ![Prometheus](https://img.shields.io/badge/Prometheus-Monitoring-orange)
