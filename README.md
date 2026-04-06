@@ -7,9 +7,9 @@
 ![Security](https://img.shields.io/badge/Security-BlueTeam-darkred)
 ![Observability](https://img.shields.io/badge/Observability-Lab-green)
 
-A hands-on lab designed to simulate both **observability and security incident response**, combining infrastructure monitoring with SIEM-based threat detection.
+A hands-on lab designed to simulate real-world scenarios combining **infrastructure monitoring**, **observability**, and **security incident response**.
 
-This project demonstrates how modern environments integrate monitoring, logging and security analysis to support real-world incident investigation.
+This project demonstrates how modern environments integrate metrics, logs, and security analysis to support operational and security investigations.
 
 ---
 
@@ -19,61 +19,83 @@ This lab simulates a production-like environment where:
 
 - Infrastructure metrics are collected and visualized
 - Security events are detected and analyzed
-- Incidents are investigated using logs and observability data
+- Incidents are investigated using observability and SIEM concepts
 
-The goal is to build a **real analyst mindset**, combining monitoring with security operations.
+The goal is to develop a **real analyst mindset**, combining monitoring and security operations.
 
 ---
 
 # Monitoring & Security Stack
 
-The environment includes:
+## 📊 Observability
+- Prometheus – metrics collection and storage
+- Node Exporter – host-level metrics
+- Grafana – dashboards and visualization
 
-### 📊 Observability
-- **Prometheus** – time-series metrics collection
-- **Node Exporter** – host-level metrics
-- **Grafana** – dashboards and visualization
+## 🔐 Security / SIEM
+- Wazuh – log analysis and threat detection
+- Event Logs – authentication and system activity
+- Correlation rules – detection of suspicious behavior
 
-### 🔐 Security / SIEM
-- **Wazuh** – log analysis and threat detection
-- **Event Logs** – authentication and system activity
-- **Correlation Rules** – detection of suspicious behavior
-
-### ⚙️ Infrastructure
-- **Docker** – containerized environment
+## ⚙️ Infrastructure
+- Docker – containerized deployment
 
 ---
 
 # Monitored Metrics
 
-The monitoring layer includes:
-
-- Host CPU Utilization
-- Host Memory Utilization
-- Network Inbound Traffic
-- Network Outbound Traffic
+- CPU Utilization
+- Memory Utilization
+- Network Traffic (Inbound/Outbound)
 - System Load
 
-These metrics support performance analysis and incident investigation.
+These metrics help detect abnormal behavior and support troubleshooting and incident investigation.
 
 ---
 
 # Security Scenarios (SOC / SIEM)
 
-This lab also simulates security events such as:
+This lab includes simulated attack scenarios:
 
-- Brute force attacks (multiple failed logins)
+- Brute force (multiple failed logins)
 - Suspicious PowerShell execution
 - Anomalous login behavior
 - Unauthorized user creation (persistence)
 
-These scenarios help practice detection and response using logs.
+These scenarios simulate real-world attack patterns and detection workflows.
+
+---
+
+# Incident Simulation
+
+This lab also demonstrates how incidents are analyzed:
+
+Example flow:
+
+- Alert triggered (e.g., high CPU or login anomaly)
+- Investigation through Grafana metrics
+- Correlation with logs and processes
+- Identification of abnormal behavior
+- Decision-making based on evidence
+
+This reflects real-world incident response workflows.
+
+---
+
+# Security Integration
+
+This project integrates monitoring with security concepts:
+
+- Detection of anomalous behavior
+- Log-based investigation (SIEM approach)
+- Incident response mindset
+- Correlation between metrics and security events
 
 ---
 
 # Architecture
 
-### Observability Flow
+## Observability Flow
 
 Host System  
 │  
@@ -84,11 +106,11 @@ Node Exporter
 Prometheus (metrics collection)  
 │  
 ▼  
-Grafana (visualization)  
+Grafana (dashboard visualization)  
 
 ---
 
-### Security Flow (SIEM)
+## Security Flow (SIEM)
 
 Host / Endpoint  
 │  
@@ -96,7 +118,7 @@ Host / Endpoint
 Wazuh Agent  
 │  
 ▼  
-Wazuh Server (log analysis & correlation)  
+Wazuh Server (analysis & correlation)  
 │  
 ▼  
 Alerts & Investigation  
@@ -105,15 +127,11 @@ Alerts & Investigation
 
 # Dashboard Example
 
-Grafana dashboard displaying infrastructure metrics.
-
 ![Grafana Dashboard](https://raw.githubusercontent.com/AndreGoncallez/primeops-observability-incident-lab/main/evidence/grafana-dashboard.png)
 
 ---
 
 # Prometheus Targets
-
-Prometheus scraping Node Exporter metrics.
 
 ![Prometheus Targets](https://raw.githubusercontent.com/AndreGoncallez/primeops-observability-incident-lab/main/evidence/prometheus-targets.png)
 
@@ -121,27 +139,21 @@ Prometheus scraping Node Exporter metrics.
 
 # Running Containers
 
-Docker containers used in the environment.
-
 ![Docker Containers](https://raw.githubusercontent.com/AndreGoncallez/primeops-observability-incident-lab/main/evidence/docker-containers.png)
 
 ---
 
 # Alert Rules
 
-Basic alerting is implemented using Prometheus rules.
-
 **High CPU Usage Alert**
 
-Triggers when CPU usage remains above threshold.
+Triggers when CPU usage exceeds threshold.
 
 ![Prometheus Rules](https://raw.githubusercontent.com/AndreGoncallez/primeops-observability-incident-lab/main/evidence/prometheus-rules.png)
 
 ---
 
 # Skills Demonstrated
-
-This project demonstrates practical experience with:
 
 - Infrastructure Monitoring
 - Observability Fundamentals
@@ -150,7 +162,7 @@ This project demonstrates practical experience with:
 - Prometheus Metrics Collection
 - Grafana Dashboard Design
 - Docker-based Infrastructure
-- Troubleshooting Based on Metrics and Logs
+- Troubleshooting based on metrics and logs
 
 ---
 
@@ -158,7 +170,7 @@ This project demonstrates practical experience with:
 
 
 monitoring/ # Prometheus, Grafana and metrics stack
-soc-siem/ # Security lab with Wazuh and incident scenarios
+soc-siem/ # Security lab with incident scenarios
 dashboards/ # Grafana dashboards
 runbooks/ # Incident response procedures
 scenarios/ # Simulated incidents
@@ -171,33 +183,29 @@ docs/ # Documentation
 
 # Use Cases
 
-This lab was created to practice:
-
 - Infrastructure monitoring
 - Observability analysis
 - Security event detection
 - Log investigation
 - Incident response workflows
-- Troubleshooting based on data
+- Troubleshooting based on metrics
 
 ---
 
 # Future Improvements
 
-Planned improvements include:
-
-- Wazuh alert rule customization
-- Advanced attack simulations (lateral movement, persistence)
+- Wazuh alert tuning
+- Advanced attack simulations
 - Integration with automation (SOAR / n8n)
 - Alertmanager integration
-- Automated incident response workflows
-- Expanded dashboards and metrics
+- Automated incident response
+- Expanded dashboards
 
 ---
 
 # Author
 
-**Andre Goncallez**  
+Andre Goncallez  
 PrimeOps Project
 
 ---
