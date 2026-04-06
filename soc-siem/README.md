@@ -161,3 +161,10 @@ This module supports practice in:
 > Think before acting  
 > Understand before changing  
 > Document to evolve
+>
+> ---
+
+# Author
+
+**Andre Goncallez**  
+PrimeOps Project
